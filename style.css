@@ -13,6 +13,7 @@ body{
     color: white; 
     width: min(375px, 25vw);
     display: grid;
+    grid-template-rows: 0.2fr 0.2fr 0.2fr;
     gap: 10px;
     /*gap: 30px; 
     padding-left: 30px;
@@ -33,11 +34,28 @@ body{
 }
 
 .dashboard, .mainNav, .helpNav{ 
-    grid-template-columns: 1fr 3fr; 
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
 }
 
 .dashboard, .main, .help{ 
     padding: 5px 20px;
+}
+
+.main{ 
+    grid-template-rows: repeat(6, 15%);
+}
+
+.help{ 
+    grid-template-rows: repeat(3, 30%);
+}
+
+.dashboard{ 
+    font-size: 28px;
+}
+
+.main, .help { 
+    font-size: 20px;
 }
 
 /*.dashboard, .main, .help, .mainNav, .helpNav{ 
