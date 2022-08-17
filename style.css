@@ -2,34 +2,29 @@
 body{ 
     display: grid;
     grid-template-columns: 1fr 3fr;
-    font-family: "Lora"; 
-    height: min(1000px, 100vh);
-    width: min(1500px, 100vh); 
+    font-family: "Inter"; 
+    height: minmax(1000px, 100vh);
+    width: minmax(1500px, 100vh); 
     margin: 0;
 }
 
 .sidebar{ 
     background-color: rgb(47, 185, 231) ;
     color: white; 
-    width: min(375px, 25vw);
+    width: minmax(375px, 25vw);
     display: grid;
     grid-template-rows: 0.2fr 0.2fr 0.2fr;
     gap: 10px;
-    /*gap: 30px; 
-    padding-left: 30px;
-    padding-right: 20px;
-    height: 100%;*/
 }
 
 .sidebar, .container{ 
-    height: min(1000px, 100vh);
+    height: min(1000px, 100%);
 }
 .container{
-    background-color: lightgray;
-    width: min(1125px, 75vw);
+    width: min(1125px, 75%);
 }
 
-.dashboard, .main, .help, .mainNav, .helpNav{ 
+.dashboard, .main, .help, .mainNav, .helpNav, .search, .left, .right, .header{ 
     display: grid; 
 }
 
@@ -58,55 +53,121 @@ body{
     font-size: 20px;
 }
 
-/*.dashboard, .main, .help, .mainNav, .helpNav{ 
+.header{ 
+    background-color: lightpink;
+    padding: 10px 40px;
+    gap: 20px;
+}
+
+.board{  
     display: grid;
-    grid-template-columns: 1fr, 3fr;
-    align-items: center;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    background-color: lightcyan;
+    gap: 20px;
+    padding: 10px 30px;
+}
+
+.board:first-child{ 
+    grid-row: 1/ span 2;
+}
+
+.trending{ 
+    grid-column: 2;
+}
+
+.card{ 
+    height: 150px;
+    width: 300px;
+    background-color: white;
+    padding: 20px 10px;
+    border-radius: 6%;
+    display: flex;
+}
+
+.cards{ 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.card p:first-of-type, .board>div>p:first-of-type{ 
+    font-weight: 700;
+}
+
+.card:last-child{ 
+    justify-self: flex-end;
+}
+
+.card:first-child+p{ 
     justify-content: flex-start;
 }
 
-.mainNav, .helpNav, .dashboard{ 
-    gap: 15px;
+.search{ 
+    display: grid;
+    grid-template-columns: 2.2fr 0.8fr;
+    align-items: center;
+    font-size: 18px;
 }
 
-.sidebar p { 
-    grid-column: 2; 
+.left{ 
+    grid-template-columns: 0.1fr 0.7fr;
+    align-items: center;
+} 
+
+.right{ 
+    grid-template-columns: repeat(2, 0.2fr) 0.5fr;
+    align-items: center;
+    font-weight: 700;
 }
 
-.main, .help{ 
+input{
+    height: 20px;
+    background-color: lightgray;
+    border-radius: 5%;
+    font-size:16px;
+}
+
+.user{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
+}
+
+.account{ 
+    display: grid;
+    grid-template-columns: 0.3fr 2fr;
+    align-items: center;
+}
+
+.account img{
+    grid-row: 1 / 3;
+}
+
+.account p{ 
+    font-weight: 900;
+}
+
+.intro>:last-child{
+    font-size: 24px;
+}
+
+.actions{ 
+    font-family: "Inter";
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+}
+
+button{ 
+    background-color: rgb(47, 185, 231);
+    color:white;
+    font-family: "Inter";
+    border-radius: 40%;
+    padding: 10px 20px;
     font-size: 20px;
 }
 
-.dashboard{ 
-    font-size: 28px;
+.intro{
+    line-height: 50%;
 }
-
-.container{ 
-    display: grid;
-    grid-template-rows: 1fr 3fr;
-}
-
-.board{ 
-    background-color: lightgray;
-}
-
-.help{ 
-    grid-template-rows: repeat(3, 50px)
-}
-
-.main{
-    grid-template-rows: repeat(6, 50px);
-}
-
-.dashboard img, .dashboard p{ 
-    position: relative;
-    right: 6px;
-}
-
-.activity, .top, .user{ 
-    display: grid; 
-}
-
-input{ 
-    width: minmax(40px, 80px);
-}*/
