@@ -90,10 +90,16 @@ body{
 
 .card p{
     grid-column: 1;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .icons{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: flex-end;
     grid-column: 2;
+    padding-bottom: 20px;
     grid-row: 2;
 }
 
@@ -122,9 +128,10 @@ body{
 
 .search{ 
     display: grid;
-    grid-template-columns: 2.2fr 0.8fr;
+    grid-template-columns: 1.5fr 0.8fr;
     align-items: center;
     font-size: 18px;
+    gap: 50px;
 }
 
 .left{ 
@@ -136,6 +143,7 @@ body{
     grid-template-columns: repeat(2, 0.2fr) 0.5fr;
     align-items: center;
     font-weight: 700;
+    gap: 30px;
 }
 
 input{
@@ -245,4 +253,23 @@ button{
 
 .trending p, .announcements p {
     font-weight: 900;
+}
+
+.tags img, .right>img:last-of-type{
+    width: 50px;
+    height: 50px;
+}
+
+.account img {
+    width: 80px;
+    height: 80px;
+}
+
+.dashboard img {
+    position: relative;
+    right: 17px;
+}
+
+.card {
+    line-height: 30%;
 }
